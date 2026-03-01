@@ -1,65 +1,87 @@
 import Image from "next/image";
+import { ExternalLink, BadgeCheck } from "lucide-react";
+import { products } from "./products";
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+	return (
+		<main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-900 py-16 px-4 sm:px-6">
+			<div className="max-w-6xl mx-auto space-y-12">
+				<header className="flex flex-col items-center text-center space-y-5">
+					<div className="w-28 h-28 rounded-full bg-white ring-1 ring-slate-200 shadow-xl shadow-slate-200/50 p-1 overflow-hidden relative">
+						<Image
+							src="/your-profile.jpg" 
+							alt="Gowtham"
+							fill
+							className="object-cover rounded-full"
+							priority
+						/>
+					</div>
+
+					<div className="space-y-2">
+						<h1 className="text-3xl font-extrabold tracking-tight flex items-center justify-center gap-2 text-slate-900">
+							The Architect's Desk
+							<BadgeCheck className="w-6 h-6 text-blue-500 fill-blue-50" />
+						</h1>
+						<p className="text-slate-500 text-lg font-medium max-w-md mx-auto">
+							Curating high-performance workspaces and engineering tools.
+						</p>
+					</div>
+				</header>
+
+				{/* Product Grid - 3 Columns on Desktop */}
+				<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{products.map((product) => (
+						<div
+							key={product.id}
+							className="group bg-white/80 backdrop-blur-md rounded-2xl border border-slate-200/80 p-1 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+						>
+							{/* Image Container */}
+							<div className="aspect-[4/3] w-full bg-white rounded-xl overflow-hidden relative flex items-center justify-center p-4">
+								<Image
+									src={product.imageUrl}
+									alt={product.name}
+									fill
+									className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+
+							{/* Product Details */}
+							<div className="p-5 flex flex-col flex-grow space-y-4">
+								<div className="flex items-center">
+									<span className="inline-flex items-center px-2.5 py-1 bg-slate-100/80 border border-slate-200 text-slate-600 text-[11px] font-semibold uppercase tracking-wider rounded-md">
+										{product.icon}
+										{product.tag}
+									</span>
+								</div>
+
+								<div className="space-y-1.5 flex-grow text-left">
+									<h2 className="font-bold text-lg leading-snug text-slate-900 line-clamp-2">
+										{product.name}
+									</h2>
+									<p className="text-sm text-slate-500 line-clamp-3 leading-relaxed">
+										{product.description}
+									</p>
+								</div>
+
+								<a
+									href={product.affiliateLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="mt-4 w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 px-4 rounded-xl font-semibold text-sm shadow-md hover:bg-slate-800 transition-all active:scale-[0.98]"
+								>
+									Check Price on Amazon
+									<ExternalLink className="w-4 h-4" />
+								</a>
+							</div>
+						</div>
+					))}
+				</section>
+				<footer className="text-center pt-10 border-t border-slate-200/60 mt-8">
+					<p className="text-xs text-slate-400 font-medium italic">
+						"As an Amazon Associate, I earn from qualifying purchases."
+					</p>
+				</footer>
+			</div>
+		</main>
+	);
 }
