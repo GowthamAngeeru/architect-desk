@@ -1,4 +1,4 @@
-import { Monitor, Keyboard, Mouse, BookOpen, ExternalLink } from "lucide-react";
+import { Monitor, Keyboard, Mouse, BookOpen, ExternalLink, Headphones } from "lucide-react";
 
 export const products = [
 	{
@@ -72,4 +72,24 @@ export const products = [
 		imageUrl: "https://m.media-amazon.com/images/I/61BGtLdXTLL._SL1500_.jpg",
 		affiliateLink: "https://amzn.to/3MYP3QJ",
 	},
+	{
+        id: 8,
+        name: "Logitech MX Master 3S Wireless Mouse",
+        tag: "Ergonomics",
+        icon: <Mouse className="w-3 h-3 mr-1" />,
+        description:
+            "The ultimate ergonomic mouse for SREs and System Architects. Features ultra-fast scrolling, 8K DPI track-on-glass sensor, and quiet clicks.",
+        imageUrl: "https://m.media-amazon.com/images/I/61ni3t1ryQL._SL1500_.jpg", 
+        affiliateLink: "https://amzn.to/46Av3us",
+    },
+    {
+        id: 9,
+        name: "Sony WH-1000XM5 Noise Canceling Headphones",
+        tag: "Deep Work",
+        icon: <Headphones className="w-3 h-3 mr-1" />,
+        description:
+            "Block out the noise and enter the flow state. Industry-leading active noise cancellation with 30 hours of battery life for uninterrupted coding.",
+        imageUrl: "https://m.media-amazon.com/images/I/51KGPDttQhL._SL1500_.jpg", 
+        affiliateLink: "https://amzn.to/4r90kMv",
+    }
 ];
