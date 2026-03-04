@@ -1,4 +1,11 @@
-import { Monitor, Keyboard, Mouse, BookOpen, ExternalLink, Headphones } from "lucide-react";
+import {
+	Monitor,
+	Keyboard,
+	Mouse,
+	BookOpen,
+	ExternalLink,
+	Headphones,
+} from "lucide-react";
 
 export const products = [
 	{
@@ -73,23 +80,63 @@ export const products = [
 		affiliateLink: "https://amzn.to/3MYP3QJ",
 	},
 	{
-        id: 8,
-        name: "Logitech MX Master 3S Wireless Mouse",
-        tag: "Ergonomics",
-        icon: <Mouse className="w-3 h-3 mr-1" />,
-        description:
-            "The ultimate ergonomic mouse for SREs and System Architects. Features ultra-fast scrolling, 8K DPI track-on-glass sensor, and quiet clicks.",
-        imageUrl: "https://m.media-amazon.com/images/I/61ni3t1ryQL._SL1500_.jpg", 
-        affiliateLink: "https://amzn.to/46Av3us",
-    },
-    {
-        id: 9,
-        name: "Sony WH-1000XM5 Noise Canceling Headphones",
-        tag: "Deep Work",
-        icon: <Headphones className="w-3 h-3 mr-1" />,
-        description:
-            "Block out the noise and enter the flow state. Industry-leading active noise cancellation with 30 hours of battery life for uninterrupted coding.",
-        imageUrl: "https://m.media-amazon.com/images/I/51KGPDttQhL._SL1500_.jpg", 
-        affiliateLink: "https://amzn.to/4r90kMv",
-    }
+		id: 8,
+		name: "Logitech MX Master 3S Wireless Mouse",
+		tag: "Ergonomics",
+		icon: <Mouse className="w-3 h-3 mr-1" />,
+		description:
+			"The ultimate ergonomic mouse for SREs and System Architects. Features ultra-fast scrolling, 8K DPI track-on-glass sensor, and quiet clicks.",
+		imageUrl: "https://m.media-amazon.com/images/I/61ni3t1ryQL._SL1500_.jpg",
+		affiliateLink: "https://amzn.to/46Av3us",
+	},
+	{
+		id: 9,
+		name: "Sony WH-1000XM5 Noise Canceling Headphones",
+		tag: "Deep Work",
+		icon: <Headphones className="w-3 h-3 mr-1" />,
+		description:
+			"Block out the noise and enter the flow state. Industry-leading active noise cancellation with 30 hours of battery life for uninterrupted coding.",
+		imageUrl: "https://m.media-amazon.com/images/I/51KGPDttQhL._SL1500_.jpg",
+		affiliateLink: "https://amzn.to/4r90kMv",
+	},
+	{
+		id: 10,
+		name: "Site Reliability Engineering: How Google Runs Production Systems",
+		tag: "Macro-Architecture",
+		icon: <BookOpen className="w-3 h-3 mr-1" />,
+		description:
+			"Master macro-architecture and learn how Google actually runs production. The definitive guide for building highly scalable infrastructure.",
+		imageUrl: "https://m.media-amazon.com/images/I/71LtkqiozCL._SL1326_.jpg",
+		affiliateLink: "https://amzn.to/4rWYGPq",
+	},
+	{
+		id: 11,
+		name: "Elgato Stream Deck MK.2",
+		tag: "Automation",
+		icon: <Keyboard className="w-3 h-3 mr-1" />,
+		description:
+			"The ultimate physical command center. Trigger CI/CD pipelines, run scripts, and automate your workflow instantly with one click.",
+		imageUrl: "https://m.media-amazon.com/images/I/61gtdFnK+UL._SL1500_.jpg",
+		affiliateLink: "https://amzn.to/4l9oSUg",
+	},
+	{
+		id: 12,
+		name: "reMarkable 2 Type Folio - Black",
+		tag: "Deep Work",
+		icon: <Keyboard className="w-3 h-3 mr-1" />,
+		description:
+			"Eliminate screen fatigue and enter pure focus mode. The ultimate e-ink typing canvas for drafting architecture docs and system designs.",
+		imageUrl: "https://m.media-amazon.com/images/I/71730805OhL._SL1500_.jpg",
+		affiliateLink: "https://amzn.to/4u6ory0",
+	},
+	{
+		id: 13,
+		name: "Kinesis Advantage360 Pro Split Keyboard",
+		tag: "Ergonomics",
+		icon: <Keyboard className="w-3 h-3 mr-1" />,
+		description:
+			"The ergonomic endgame for tech founders and elite developers. Code for 12 hours with zero wrist fatigue on this fully programmable split keyboard.",
+		imageUrl: "https://m.media-amazon.com/images/I/61Rcv4tifEL._SL1500_.jpg",
+		affiliateLink: "https://amzn.to/4b2m86n",
+	},
 ];
